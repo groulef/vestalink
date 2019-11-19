@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @site.reference %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @site.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @site.address %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @site.zipcode %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @site.city %>
+</p>
+
+<p>
+  <strong>Lots:</strong>
+</p>
+
+<% @site.parts.each do |part| %>
+  <p>
+    Reference : <%= link_to part.reference, part_path(part.id) %>, type: <%= part.type_designation %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'Back', sites_path %>
